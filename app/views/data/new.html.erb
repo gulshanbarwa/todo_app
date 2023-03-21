@@ -1,0 +1,27 @@
+<h1>New Datum</h1>
+
+<%= form_for @datum, url: data_path do |f| %>
+  <% if @datum.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@datum.errors.count, "error") %> prohibited this datum from being saved:</h2>
+
+      <ul>
+      <% @datum.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :plan %>
+    <%= f.text_field :plan %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Save" %>
+  </div>
+<% end %>
+
+<%= link_to "plan", plan_path %>
+<h4> <%= link_to 'Logout', logout_path, method: :delete %> </h4>
