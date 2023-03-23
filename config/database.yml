@@ -13,18 +13,28 @@ default: &default
 
 development:
   <<: *default
-  database: db/development.sqlite3
+  #database: db/development.sqlite3
+  database: delta_app
+  password: password
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
+
 test:
   <<: *default
-  database: db/test.sqlite3
+  #database: db/test.sqlite3
+  database: delta_app
+  password: password
 
 #production:
  # <<: *default
   #database: db/production.sqlite3
 production:
   <<: *default
-  url: <%= ENV['DATABASE_URL'] %>
+  #url: <%= ENV['DATABASE_URL'] %>
+  database: delta_app
+  password: Jly8EeRb2zdT7T6vjx76fU4ZKQS5vDC8
+  host: dpg-cge0o8qk728lv8025qo0-a
+  username: delta_app_user
+  port: 5432
