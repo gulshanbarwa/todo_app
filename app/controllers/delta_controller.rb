@@ -33,9 +33,7 @@ class DeltaController < ApplicationController
     if @user && @user.authenticate(params[:user][:password])
       session[:user_id] = @user.id
       redirect_to new_data_path, notice: 'Login successful.'
-    else
-      flash.now[:alert] = 'Invalid email/password combination'
-      render :login
+   
     end
   end
 
