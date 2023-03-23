@@ -6,15 +6,16 @@
 #
 default: &default
   adapter: postgresql
-  encoding: unicode
+  #encoding: unicode
   # For details on connection pooling, see Rails configuration guide
   # https://guides.rubyonrails.org/configuring.html#database-pooling
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  timeout: 5000
 
 development:
   <<: *default
   #database: db/development.sqlite3
-  database: delta_app
+  database: deltaa_user
   password: password
 
 # Warning: The database defined as "test" will be erased and
@@ -24,7 +25,7 @@ development:
 test:
   <<: *default
   #database: db/test.sqlite3
-  database: delta_app
+  database: deltaa_user
   password: password
 
 #production:
@@ -33,8 +34,8 @@ test:
 production:
   <<: *default
   #url: <%= ENV['DATABASE_URL'] %>
-  database: delta_app
-  password: Jly8EeRb2zdT7T6vjx76fU4ZKQS5vDC8
-  host: dpg-cge0o8qk728lv8025qo0-a
-  username: delta_app_user
+  database: deltaa
+  password: JbON9Je8JcWB80gBGjyLGuHGrZs5Haxp
+  host: dpg-cge36inekgjpv7umkfe0-a
+  username: deltaa_user
   port: 5432
